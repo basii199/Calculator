@@ -12,8 +12,7 @@ function writeCalculation () {
 }
 
 function equalsTo () {
-  calculation = eval(calculation); 
-  console.log(calculation);
+  calculation = eval(calculation);
   localStorage.setItem('calculation', calculation);
   writeCalculation()
 }
@@ -23,6 +22,15 @@ function clearButton () {
   localStorage.setItem('calculation', calculation);
   writeCalculation()
 }
+
+function deleteButton(){
+  string1 = document.querySelector('.calc-value').innerHTML
+  let length = string1.length
+  let newstring = string1.slice(0, length-1)
+  calculation = newstring
+  writeCalculation()
+}
+
 
 
 

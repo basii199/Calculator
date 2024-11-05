@@ -30,6 +30,9 @@ body{
 }
 
 .grey-button, .yellow-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   border: none;
   height: 45px;
@@ -44,8 +47,23 @@ body{
 
 .yellow-button{
   background-color: rgb(221, 129, 0);
+  font-size: x-large;
 }
 
 .clear-button{
-  font-size: 13px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+button{
+  opacity: .8.5;
+}
+
+button:hover{
+  cursor: pointer;
+  opacity: .9;
+}
+
+button:active{
+  opacity: 1;
 }

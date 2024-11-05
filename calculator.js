@@ -1,15 +1,26 @@
 let calculation = localStorage.getItem('calculation') || 0;
 let calcValue = document.querySelector('.calc-value')
+let value1
+let arith
+let value2
 
 writeCalculation()
 
 function updateCalculation (button){
-  calculation = calculation += `${button}`
-  writeCalculation()
+  if(calculation == 0){
+    calculation = `${button}`
+    writeCalculation()
+  } else{
+    calculation = calculation += `${button}`
+    writeCalculation()
+  }
 }
 
 function performArithmetic (button){
-  //const value1 = 
+  value1 = calcValue.innerHTML
+  arith = button
+  calcValue.innerHTML = ''
+  calculation = 0
 }
 
 function writeCalculation () {
@@ -17,7 +28,9 @@ function writeCalculation () {
 }
 
 function equalsTo () {
-  calculation = eval(calculation);
+  value2 = calcValue.innerHTML
+  let test = `${value1} ${arith} ${value2}`
+  calculation = eval(test);
   localStorage.setItem('calculation', calculation);
   writeCalculation()
 }
@@ -40,6 +53,23 @@ function deleteButton(){
   writeCalculation()
 }
 
+let bodyDOM = document.querySelector('body')
+  bodyDOM.addEventListener('keydown', (event)=>{
+    let e = event.key
+    
+    if(e >= 0 || e == '.'){
+      updateCalculation(event.key)
+    }else if (e == '+'||e == '-'|| e == '*'||e== '/' ){
+      performArithmetic(e)
+    }else if (e=='='){
+      equalsTo()
+    }else if(e=='Backspace'){
+      deleteButton()
+    } else if (e=='Escape'){
+      clearButton()
+    }
+  })
 
+  
 
 

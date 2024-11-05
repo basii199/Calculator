@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="calculator.css">
   </head>
@@ -19,7 +21,7 @@
         
         <button class="grey-button" onclick="updateCalculation(3)">3</button>
   
-        <button class="yellow-button" onclick="updateCalculation('+')">+</button>
+        <button class="yellow-button" onclick="performArithmetic('+')">+</button>
         
         <button class="grey-button" onclick="updateCalculation(4)">4</button>
         
@@ -27,7 +29,7 @@
         
         <button class="grey-button" onclick="updateCalculation(6)">6</button>
   
-        <button class="yellow-button" onclick="updateCalculation('-')">−</button>
+        <button class="yellow-button" onclick="performArithmetic('-')">−</button>
         
         <button class="grey-button" onclick="updateCalculation(7)">7</button>
         
@@ -35,7 +37,7 @@
         
         <button class="grey-button" onclick="updateCalculation(9)">9</button>
         
-        <button class="yellow-button" onclick="updateCalculation('*')">×</button>
+        <button class="yellow-button" onclick=" performArithmetic ('*')">×</button>
   
         <button class="grey-button" onclick="updateCalculation('.')">.</button>
         
@@ -43,7 +45,7 @@
   
         <button class="grey-button" onclick="updateCalculation('00')">00</button>
   
-        <button class="yellow-button" onclick="updateCalculation('/')">÷</button>
+        <button class="yellow-button" onclick="performArithmetic('/')">÷</button>
   
         <button class="grey-button clear-button" onclick="clearButton ()">Clear</button>
         

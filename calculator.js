@@ -1,4 +1,5 @@
 let calculation = localStorage.getItem('calculation') || 0;
+let calcValue = document.querySelector('.calc-value')
 
 writeCalculation()
 
@@ -7,8 +8,12 @@ function updateCalculation (button){
   writeCalculation()
 }
 
+function performArithmetic (button){
+  //const value1 = 
+}
+
 function writeCalculation () {
-  document.querySelector('.calc-value').innerHTML = calculation 
+  calcValue.innerHTML = calculation 
 }
 
 function equalsTo () {
@@ -24,10 +29,14 @@ function clearButton () {
 }
 
 function deleteButton(){
-  string1 = document.querySelector('.calc-value').innerHTML
+  string1 = calcValue.innerHTML
   let length = string1.length
   let newstring = string1.slice(0, length-1)
   calculation = newstring
+
+  if (calcValue.innerHTML == 0){
+    calculation = 0
+  }
   writeCalculation()
 }
 

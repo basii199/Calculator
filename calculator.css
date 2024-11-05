@@ -1,0 +1,51 @@
+body{
+  background-color: black;
+  color: white;
+  font-family: arial;
+}
+
+.solution-div{
+  display: flex;
+  width: 205px; 
+  margin-bottom: 10px; 
+  border: solid 0px grey; 
+  border-radius: 2px; 
+  height: 50px;
+  align-items: center;
+  justify-content: right;
+}
+
+.calc-value{
+  margin: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 32px;
+}
+
+
+.general-grid{
+  display: grid;
+  grid-template-columns: 45px 45px 45px 45px;
+  gap: 8px;
+}
+
+.grey-button, .yellow-button{
+  color: white;
+  border: none;
+  height: 45px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: arial;
+}
+
+.grey-button{
+  background-color: rgb(58, 58, 58);
+}
+
+.yellow-button{
+  background-color: rgb(221, 129, 0);
+}
+
+.clear-button{
+  font-size: 13px;
+}

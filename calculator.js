@@ -1,8 +1,8 @@
 let calculation = localStorage.getItem('calculation') || 0;
 let calcValue = document.querySelector('.calc-value')
-let value1
-let arith
-let value2
+let value1 = ''
+let arith = ''
+let value2 = ''
 
 writeCalculation()
 
@@ -30,7 +30,11 @@ function writeCalculation () {
 function equalsTo () {
   value2 = calcValue.innerHTML
   let test = `${value1} ${arith} ${value2}`
-  calculation = eval(test);
+  calculation = eval(test)
+
+  if(!Number.isInteger(calculation)){
+    calculation = calculation.toFixed(3)
+  }
   localStorage.setItem('calculation', calculation);
   writeCalculation()
 }
@@ -61,7 +65,7 @@ let bodyDOM = document.querySelector('body')
       updateCalculation(event.key)
     }else if (e == '+'||e == '-'|| e == '*'||e== '/' ){
       performArithmetic(e)
-    }else if (e=='='){
+    }else if (e=='=' || e == 'Enter'){
       equalsTo()
     }else if(e=='Backspace'){
       deleteButton()

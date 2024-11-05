@@ -1,4 +1,4 @@
-let calculation = localStorage.getItem('calculation');
+let calculation = localStorage.getItem('calculation') || 0;
 
 writeCalculation()
 
@@ -18,7 +18,7 @@ function equalsTo () {
 }
  
 function clearButton () {
-  calculation = ' ';
+  calculation = '0';
   localStorage.setItem('calculation', calculation);
   writeCalculation()
 }
